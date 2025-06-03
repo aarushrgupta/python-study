@@ -1,0 +1,12 @@
+from turtle import *
+penup()
+goto(50, -100)
+pendown()
+width(10)
+color("gold")
+setheading(45)
+fd(20)
+circle(-70, 90)
+fd(20)
+lt(135)
+fd(28)

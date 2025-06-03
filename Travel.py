@@ -1,0 +1,10 @@
+places = ["France", "Italy", "India", "Bahamas", "China"]
+print(places)
+places.sort()
+print(places)
+places.sort(reverse = True)
+print(places)
+places.sort(reverse = False)
+print(places)
+places.reverse()
+print(places)
