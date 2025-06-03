@@ -1,0 +1,6 @@
+def greetSombody(name):
+    print("Hello " + name) + ("How are you?")
+
+
+
+greetSomebody("Aarush")
