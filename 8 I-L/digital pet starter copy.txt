@@ -1,0 +1,37 @@
+from tkinter import *
+from tkinter.ttk import *
+from tkinter.simpledialog import *
+from time import *
+from random import *
+
+# initialization
+
+root = Tk()
+root.geometry("300x650+500+50")
+
+calm_img = PhotoImage(file='calm.png')
+happy_img = PhotoImage(file='happy.png')
+grumpy_img = PhotoImage(file='grumpy.png')
+sad_img = PhotoImage(file='sad.png')
+annoyed_img = PhotoImage(file='annoyed.png')
+
+pet_img = PhotoImage(file='pet.png')
+play_img = PhotoImage(file='play.png')
+feed_img = PhotoImage(file='feed.png')
+
+pauseicon = PhotoImage(file='pauseicon.png')
+
+play_level = 50
+feed_level = 50
+pet_level = 50
+
+# functions 
+
+
+
+# set up UI
+
+
+
+# start game
+

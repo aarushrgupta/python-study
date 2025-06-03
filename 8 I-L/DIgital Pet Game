@@ -1,0 +1,7 @@
+# set up UI
+
+display_lbl = Label(root, image=calm_img)
+display_lbl.pack(pady=10)
+
+name_lbl = Label(root, text="Name")
+name_lbl.pack()

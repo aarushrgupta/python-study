@@ -1,0 +1,161 @@
+from random import *
+from math import *
+
+repeat_var = 0
+def report():
+    if (len(names))<1:
+        print("I can't print a report yet because no one has finished the quiz.")
+    else:
+        qsum_1 = 0
+        qsum_2 = 1
+        qsum_3 = 2
+        qsum_4 = 3
+        for i in range(len(names)):
+            name = names[i]
+            answers = all_answers[i]
+            print(name + ":" + str(answers))
+            qsum_1 += answers[0]
+            qsum_2 += answers[1]
+            qsum_3 += answers[2]
+            qsum_4 += answers[3]
+        print("The average rating for question 1 was " + str(qsum_1/ len(names)))
+        print("The average rating for question 2 was " + str(qsum_2/ len(names)))
+        print("The average rating for question 1 was " + str(qsum_3/ len(names)))
+        print("The average rating for question 2 was " + str(qsum_4/ len(names)))
+
+def discuss():
+    global repeat_var
+    global user_name
+
+    print("Okay, " + user_name + ", let's go! :D ")
+    names.append(user_name)
+    answers = []
+
+    # ask the questions
+    print("Here's the first question.")
+    print("How familiar do you think you are with computer accessibility?")
+    choice = input("Type a number from 1) not very familiar to 5) very familiar: ")
+    if choice >= "1" and choice <= "5":
+        choice = int(choice)
+    else:
+        choice = nan
+        print("I didn't understand your answer.")
+    answers.append(choice)
+
+    replies = ["That's interesting, " + user_name + ".",
+               "Okay, "+ user_name + " let's talk about it a bit then!",
+               "I'll tell you some more about it."]
+    print("\n")
+    print(replies[randrange(len(replies))])
+
+    print("Question number 2:")
+    print("Do you ever watch videos with closed captioning on?")
+    choice = input("Type a number from 1) never to 5) often: ")
+    if choice >= "1" and choice <= "5":
+        choice = int(choice)
+    else:
+        choice = nan
+        print("That input didn't count.")
+    answers.append(choice)
+
+    replies = ["You know, " + user_name + ", some people use closed captioning whether they need it or not.",
+               "Closed captions can help with translating.",
+               "Good closed captioning requires good AI software, " + user_name + "."]
+    print("\n")
+    print(replies[randrange(len(replies))])
+    print("Third question:")
+    print("Do you ever use Siri or another digital assistant?")
+    choice = input("Type a number from 1) never to 5) often: ")
+    if choice >= "1" and choice <= "5":
+        choice = int(choice)
+    else:
+        choice = nan
+        print("I can't record that input.")
+    answers.append(choice)
+
+    replies = ["There are a lot of different digital assistant tools.",
+               "Know what, " + user_name + "? Siri and Alexa are kind of like my cousins! ^_^",
+               "I'm a digital assistant too!"]
+    print("\n")
+    print(replies[randrange(len(replies))])
+    print("Here's the last question, now:")
+
+    print("How hard do you think it would be to use a screen reader?")
+    choice = input("Type a number from 1) very difficult to 5) very easy: ")
+    if choice >= "1" and choice <= "5":
+        choice = int(choice)
+    else:
+        choice = nan
+        print("Sorry, but your response wasn't valid.")
+    answers.append(choice)    
+
+    replies = ["People who can't see their screen might want to use a screen reader to help them.",
+               "Screen readers can be pretty important for people who can't read.",
+               "Screen readers are an important accessibility tool."]
+    index = randrange(len(replies))
+    print(replies[index])
+    all_answers.append(answers)
+
+    print("\n")
+    print("That was my last question! Thanks for giving me your answers! ^_^")
+
+    print("Now what should we do?")
+    print("\n")
+    repeat_var=1
+
+# global variables
+
+names = []
+all_answers = []
+ 
+# display greeting
+intro_list = ["What are you good at? ", "What do you like to do? ", "What's your favorite thing to do? "]
+human_list = ["Silly me, you ARE a human!",
+              "You sure sound like a human to me!",
+              "I wish I was as good at sounding human as you."]
+
+print("Hello! My name is Sybol! I'm a Python Chatbot.")
+print("I use lists and random numbers to try to sound like a human! ^_^")
+user_name = input("What's your name? ")
+print("Nice to meet you, " + user_name + "!")
+intro_question = input(intro_list[randrange(len(intro_list))]) 
+print("That's really cool! :) ")
+print("I talk to people about accessibility!")
+print("Sometimes I sound like a robot, but I try my best.")
+intro_question_two = input("Are you good at sounding like a human? ")
+print(human_list[randrange(len(human_list))])
+print("I was made to help humans with computer accessibility.") 
+intro_question_three = input("Do you know what accessibility means? ")
+print("Accessibility is a way we programs can help people"
+      +" use computers, no matter what their abilities are.")
+
+while (True):
+    if repeat_var == 0:
+        menu = ["I have a few things you can choose from.",
+            "What one of these would you like to do?",
+            "Would you like to talk about accessibility now?"]
+        print(menu[randrange(len(menu))])
+        print("1) Take my accessibility quiz right now!")
+        print("2) Read the answers I've gotten from other people.")
+        print("3) Exit this chatbot.")
+    else: print ("My menu is the same. You can type 1 to retake the quiz,"
+                 + "2 to see what people have answered, and 3 to say goodbye!")
+    
+    choice = input("Choice: ")
+
+    if choice == "1":
+        discuss()
+        # print("discuss")
+    elif choice == "2":
+        report()
+        # print("report")
+    elif choice == "3":
+        goodbye_responses = ["Okay! Bye for now!", "I'll see next time," + user_name + "!", "Goodbye, " + user_name + "."]
+        print(goodbye_responses[randrange(len(goodbye_responses))])   
+    else:
+        wrong_response = ["I didn't understand your answer. Please type 1, 2, or 3 only.",
+                          "Sorry, I couldn't process your answer. Can you please type a 1, 2, oe 3?",
+                          "I can only understand you if you type 1, 2, or 3."]
+        print(wrong_response[randrange(len(wrong_response))])
+    
+

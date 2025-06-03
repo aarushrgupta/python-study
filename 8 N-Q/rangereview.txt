@@ -1,0 +1,59 @@
+from random import *
+
+Qs = [
+	"what does AI stand for?",
+	"The following is an accessibility tool:",
+	"Initialization means:",
+	"Global variables...",
+	"What can chatbots be used for?",
+	"Who benefits from accessibility tools?",
+	"Screen readers are especially useful for...",
+	"Closed captioning is especially useful for...",
+	]
+	
+Cs = [
+	["Assistive interface", "Artificial interaction", "Artificial intelligence", "Artifact interpolation"],
+	["Screen reader", "Magnification", "Speech recognition", "All of the above"],
+	["Writing your initials on something", "Assigning variables an initial value", "Creating an initial flowchart", "Writing comments before every function"],
+	["are accessible everywhere in your program.", "are only accessible inside functions.", "must be written in uppercase.", "never change."],
+	["Playing games", "Answering common questions", "Teaching", "All of the above"],
+	["People who have trouble seeing", "People who have trouble hearing", "People who have trouble with fine motor control", "Everyone"],
+	["people with vision problems", "people with hearing problems", "people who have trouble with fine motor control", "All of the above"],
+	["people with vision problems", "people with hearing problems", "people who have trouble with fine motor control", "All of the above"],
+	]
+	
+As = [
+	3,
+	4,
+	2,
+	1,
+	4,
+	4,
+	1,
+	2,
+	]
+
+print("Greetings and salutations coder!" )
+print("Can you answer enough questions correctly to pass?" )
+
+while (len(Qs) >= 2):
+
+	# pick one of the remaining questions
+	rand_num = len(Qs)
+	
+	print(Qs[rand_num])
+	for i in range(4):
+		print(str(i + 1) + ": " + Cs[rand_num][i] )
+	
+	choice = int(input("Your choice: "))
+	
+	if choice == As[rand_num]:
+		print( "Very good! You won't see that question again!" )
+		Qs.pop( rand_num )
+		Cs.pop( rand_num )
+		As.pop( rand_num )
+	else:
+		print( "Sorry, haven't got that one yet. You'll have another chance." )
+
+else:
+	print( "Congratulations! Move on to the next activity." )
